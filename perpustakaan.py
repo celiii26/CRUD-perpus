@@ -203,7 +203,6 @@ def menu_edit2():
         buku_sudah_kembali = cari_data(data_peminjaman, "dikembalikan", "status")
         buku_dipinjam = [item for item in data_peminjaman if item not in buku_sudah_kembali]
         list_id = [item["id"] for item in buku_dipinjam]
-        print(list_id)
         if buku_dipinjam == []:
             print("Tidak ada buku yang bisa dikembalikan.\n")
             print("Kembali ke menu sebelumnya.")
