@@ -16,6 +16,15 @@ Berikut ini adalah flowchart aplikasi yang menunjukkan garis besar alur menu dan
 
 Flowchart ini memvisualisasikan struktur menu utama dan submenu, termasuk fitur melihat data, menambah peminjaman, mengedit, dan menghapus data.
 
+## Business Backgroud
+Latar belakang utama dibuatnya program ini adalah untuk membantu **pengelola/admin perpustakaan** sebagai stakeholder dalam mengelola data peminjaman buku di perpustakaan.
+
+### Tujuan Aplikasi
+- Membuat data peminjaman buku menjadi lebih terstruktur
+- Mempermudah proses pelacakan buku yang belum/terlambat dikembalikan
+- Mengurangi potensi kehilangan buku
+- Memberikan laporan terstruktur dan historis penggunaan buku
+
 ## Cara Mengakses Program
 1. Pastikan anda sudah menginstal Python
 2. Download atau Clone repository ini dengan masukan command ini pada terminal cmd anda. 'git clone https://github.com/celiii26/CRUD-perpus.git'
