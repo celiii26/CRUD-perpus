@@ -9,6 +9,12 @@ Bentuk dari program ini berupa Command Line Interface (CLI) sehingga dapat dijal
 - Mengedit data peminjaman yang ingin diperpanjang masa pinjamnya
 - Mengedit data peminjaman buku yang sudah dikembalikan
 - Menghapus data buku sesuai pilihan/seluruh data buku yang sudah kembali
+### Flow Program
+Berikut ini adalah flowchart aplikasi yang menunjukkan garis besar alur menu dan fitur dalam program peminjaman buku perpustakaan:
+
+<img src="./flow_program.png" alt="flow_program" width="600"/>
+
+Flowchart ini memvisualisasikan struktur menu utama dan submenu, termasuk fitur melihat data, menambah peminjaman, mengedit, dan menghapus data.
 
 ## Cara Mengakses Program
 1. Pastikan anda sudah menginstal Python
