@@ -97,7 +97,7 @@ Menu 1-2 : Cari data berdasarkan parameter
                 print_tabel(cari_data(data_peminjaman, filter, "nama_buku"))
         elif pil_menu == 3:
             filter = input("Masukkan status (dikembalikan/dipinjam/terlambat) : ")
-            if cari_data(data_peminjaman, filter, "nama_buku") == []:
+            if cari_data(data_peminjaman, filter, "status") == []:
                 print("Peminjaman dengan status yang anda cari tidak ada.\n")
             else:
                 print_tabel(cari_data(data_peminjaman, filter, "status"))
@@ -110,7 +110,7 @@ Menu 2 : Menambahkan data peminjaman baru
 
 Tanggal hari ini : {now.date()}
 
-Masukkan data anda, buku yang dipinjam, 
+Masukkan data nama peminjam, buku yang dipinjam, 
 dan tentukan tanggal pengembalian buku!
 ''')
     # Proses meng-input data
@@ -126,8 +126,10 @@ Nama Buku : {nama_buku}
 Tgl Pinjam : {now.date()}
 Tgl Pengembalian : {tgl_kembali}
 
-1. Lanjutkan penambahan data di atas
-0. Batalkan penambahan data
+Apakah anda yakin akan menambah data di atas?
+1. Ya, tambah data
+0. Tidak, batal tambah data
+
 ''')
     confirm = validasi_input("Pilih menu : ", 1)
     if confirm == 1:
@@ -191,8 +193,17 @@ Tgl Kembali : {buku["tgl_kembali"]}
 Tanggal hari ini : {now.date()}
 ''')
             tgl_baru = validasi_tanggal("Masukkan tanggal pengembalian baru (YYYY-MM-DD): ")
-            data_peminjaman[id_buku-1]["tgl_kembali"] = tgl_baru
-            print("Proses perpanjangan berhasil.")
+            print('''
+Apakah anda yakin akan memperpanjang masa pinjam buku ini?
+1. Ya, perpanjang
+0. Tidak, batal perpanjang
+''')
+            pil_menu = validasi_input("Pilih menu : ", 1)
+            if pil_menu == 0:
+                print("Proses perpanjang dibatalkan")
+            else:
+                data_peminjaman[id_buku-1]["tgl_kembali"] = tgl_baru
+                print("Proses perpanjangan berhasil.")
             break
 
 ''' Fungsi pemrosesan menu 3-2 : Kembalikan buku '''
@@ -301,8 +312,9 @@ def menu_delete1():
         print(tabulate(item_table, headers="keys", tablefmt="fancy_grid"))
         print('''
 
-1. Lanjutkan menghapus data di atas
-0. Batal menghapus data
+Apakah anda yakin akan menghapus data di atas?
+1. Ya, hapus data
+0. Tidak, batal hapus data
 ''')
         confirm = validasi_input("Pilih menu : ", 1)
         if confirm == 1:
@@ -323,8 +335,9 @@ def menu_delete2():
 
     print('''
 
-1. Lanjutkan menghapus data di atas
-0. Batal menghapus data
+Apakah anda yakin akan menghapus data di atas?
+1. Ya, hapus data
+0. Tidak, batal hapus data
 ''')
     confirm = validasi_input("Pilih menu : ", 1)
     if confirm == 1:
